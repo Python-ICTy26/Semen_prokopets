@@ -21,9 +21,6 @@ jobs:
         then
           pip install -r ${{ github.head_ref }}/requirements.txt
         fi
-    - name: Run isort
-      run: |
-        isort -c --diff --profile black ${{ github.head_ref }}
     - name: Run black
       run: |
         black -l 100 --check --diff --color --exclude "test*" ${{ github.head_ref }}
