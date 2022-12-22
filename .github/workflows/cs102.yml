@@ -21,9 +21,6 @@ jobs:
         then
           pip install -r ${{ github.head_ref }}/requirements.txt
         fi
-    - name: Run black
-      run: |
-        black -l 100 --check --diff --color --exclude "test*" ${{ github.head_ref }}
     - name: Run mypy
       run: |
         mypy --ignore-missing-imports ${{ github.head_ref }}
