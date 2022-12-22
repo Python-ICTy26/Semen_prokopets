@@ -3,7 +3,6 @@ import pyLDAvis.gensim
 from gensim.corpora import Dictionary
 from textacy import preprocessing
 from tqdm import tqdm
-
 from vkapi.wall import get_wall_execute
 
 
