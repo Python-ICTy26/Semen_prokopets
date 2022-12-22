@@ -64,7 +64,9 @@ class ReadIndexTestCase(TestCase):
         entries = read_index(gitdir)
         self.assertEqual(3, len(entries))
         # TODO: Add sha
-        self.assertEqual(["bar.txt", "baz/numbers.txt", "foo.txt"], [e.name for e in entries])
+        self.assertEqual(
+            ["bar.txt", "baz/numbers.txt", "foo.txt"], [e.name for e in entries]
+        )
 
     def test_read_index_when_index_doesnt_exist(self):
         gitdir = repo_create(".")
@@ -220,4 +222,6 @@ class UpdateIndexTestCase(TestCase):
         self.assertEqual(3, len(entries))
 
         names = [e.name for e in entries]
-        self.assertEqual(["alphabeta/letters.txt", "numbers/digits.txt", "quote.txt"], names)
+        self.assertEqual(
+            ["alphabeta/letters.txt", "numbers/digits.txt", "quote.txt"], names
+        )
